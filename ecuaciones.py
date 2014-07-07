@@ -15,25 +15,25 @@ class Ecuaciones:
 		self.constantes = matriz  # El atributo 'contantes' es guardado.
 		impecu(grado, matriz)
 		
-	def derivada(self):
+	def derivada(self):  # Hace la derivada de un objeto 'Ecuaciones'.
 		g = self.grado
-		necu = []
-		for n in self.constantes:
+		necu = []  # Crea una lista para agregar los nuevos coeficientes.
+		for n in self.constantes:  # Aplica la fórmula de la derivada.
 			aux = n * g
 			necu.append(aux)
 			g -= 1
-		impecu(self.grado - 1, necu)
+		impecu(self.grado - 1, necu)  # Imprime el resultado.
 		
-	def integral(self):
-		g = self.grado
-		necu = []
-		for n in self.constantes:
+	def integral(self):  # Realiza la integral de un objeto 'Ecuaciones'.
+		g = self.grado   
+		necu = []  
+		for n in self.constantes:  # Aplica la fórmula de la integral para polinomios.
 			aux = n / (g + 1.0)
 			necu.append(aux)
 			g -= 1
-		impecu(self.grado + 1, necu)
+		impecu(self.grado + 1, necu)  # Imprime el resultado.
 		
-	def impecuacion(self):
+	def impecuacion(self):  # Imprime la ecuacion de un objeto 'Ecuaciones.'
 		ecu = ''
 		g = self.grado
 		aux = 0
