@@ -1,4 +1,4 @@
-def impecu(grado, const):  # Función en forma de módulo para imprimir una ecuació polinómica.
+def impecu(grado, const):  # Funcion en forma de modulo para imprimir una ecuacion polinomica.
 		ecu = ''
 		g = grado
 		aux = 0

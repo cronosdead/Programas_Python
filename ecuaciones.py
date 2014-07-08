@@ -9,7 +9,7 @@ class Ecuaciones:
 			la declaracion de un objeto perteneciente a 'Ecuaciones':
 			
 				ecuacion = Ecuacion(grado, [constantes])"""
-		self.grado = grado  # El atributo 'grados' es guardado.
+		self.grado = grado  # El atributo 'grado' es guardado.
 		matriz = [0] *  (grado + 1)
 		matriz[:len(constantes)] = constantes[:] # Se crea la lista de constantes.
 		self.constantes = matriz  # El atributo 'contantes' es guardado.
@@ -18,7 +18,7 @@ class Ecuaciones:
 	def derivada(self):  # Hace la derivada de un objeto 'Ecuaciones'.
 		g = self.grado
 		necu = []  # Crea una lista para agregar los nuevos coeficientes.
-		for n in self.constantes:  # Aplica la fórmula de la derivada.
+		for n in self.constantes:  # Aplica la formula de la derivada.
 			aux = n * g
 			necu.append(aux)
 			g -= 1
@@ -26,11 +26,13 @@ class Ecuaciones:
 		
 	def integral(self):  # Realiza la integral de un objeto 'Ecuaciones'.
 		g = self.grado   
-		necu = []  
-		for n in self.constantes:  # Aplica la fórmula de la integral para polinomios.
+		necu = [0] * (g + 2)  
+		i = 0
+		for n in self.constantes:  # Aplica la formula de la integral para polinomios.
 			aux = n / (g + 1.0)
-			necu.append(aux)
+			necu[i] = aux
 			g -= 1
+			i += 1
 		impecu(self.grado + 1, necu)  # Imprime el resultado.
 		
 	def impecuacion(self):  # Imprime la ecuacion de un objeto 'Ecuaciones.'
