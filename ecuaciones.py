@@ -22,7 +22,9 @@ class Ecuaciones:
 			aux = n * g
 			necu.append(aux)
 			g -= 1
-		impecu(self.grado - 1, necu)  # Imprime el resultado.
+		gr = self.grado - 1
+		#impecu(gr, necu)  # Imprime el resultado.
+		return gr, necu
 		
 	def integral(self):  # Realiza la integral de un objeto 'Ecuaciones'.
 		g = self.grado   
@@ -33,7 +35,32 @@ class Ecuaciones:
 			necu[i] = aux
 			g -= 1
 			i += 1
-		impecu(self.grado + 1, necu)  # Imprime el resultado.
+		gr = self.grado + 1
+		impecu(gr, necu)  # Imprime el resultado.
+		return gr, necu
+	
+	def evaluar(self, var):
+		g = self.grado
+		aux = 0
+		for n in self.constantes:
+			if g == 0:
+				aux = aux + n * (var ** g)
+				break
+			else:
+				aux = aux + n * (var ** g)
+				g -= 1
+		return aux
+	
+	def Newton_Method(self, objeto):
+		g = objeto.grado
+		dg, dc = objeto.derivada()
+		deriv = Ecuaciones(dg, dc)
+		res = float(raw_input('Valor Inicial: '))
+		cont = 1
+		while (cont < 19):
+			res = res - (objeto.evaluar(res) / deriv.evaluar(res))
+			cont += 1
+		return res
 		
 	def impecuacion(self):  # Imprime la ecuacion de un objeto 'Ecuaciones.'
 		ecu = ''
