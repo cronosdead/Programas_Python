@@ -1,0 +1,41 @@
+Aquí se presenta un listado de funciones prácticas para algunos de los objetos
+que encontremos en Python. Siempre es importante tener una referencia a la mano.
+
+Los corchetes »[]« indican que el parámetro es opcional.
+
+--->>> Strings <<<---
+
+Nota: se debe incluir la librería “string” con import string.
+
+string.upper(cadena) →→→→→ Convierte “cadena” a mayúsculas.
+string.find(cadena, subcadena) →→→→→ Retorna el índice de la “subcadena”.
+string.atoi(número en cadena) →→→→→ Convierte “número en cadena” a número entero.
+
+		-------------------------------------------------
+                | Ejemplo:                                      |
+                |  >>> string.atoi('32')                        |
+                |  >>> 32 # Número			        |
+                |                                               |
+                |                                               |
+                |_______________________________________________|
+
+string.join([cadena], [cadena a unir]) →→→→→ Une una o más cadenas dependiendo de los parámetros introducidos.
+
+		-------------------------------------------------
+		| Ejemplo:				        |
+		|  >>> string.join(['hi', 'shit'], 'fucking')	|
+		|  >>> 'hifuckingshit'     			|
+		|					        |
+		|					        |
+		|_______________________________________________|
+
+string.split([cadena], [subcadena]) →→→→→ Divide “cadena” por medio de “subcadena”.
+
+		-----------------------------------------------------
+                | Ejemplo:                                          |
+                |  >>> s = string.join(['hi', 'shit'], 'fucking')   |
+                |  >>> string.split(s, 'i')                         |
+                |  >>> ['h', 'fuck', 'ngsh', 't']                   |
+                |                                                   |
+                |___________________________________________________|
+
